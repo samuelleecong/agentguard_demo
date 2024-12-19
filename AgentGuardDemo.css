@@ -1,0 +1,211 @@
+.agent-guard-demo {
+  padding: 2rem;
+  max-width: 1600px; /* Increased from 1200px */
+  width: 95vw; /* Added to ensure consistent width */
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.steps-container::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e0e0e0;
+  z-index: -1;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.step.active .step-number {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.step.completed .step-number {
+  background: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+.step-title {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 4fr 1fr; /* Changed from 3fr 1fr for wider terminal */
+  gap: 2rem;
+  min-width: 1200px; /* Added minimum width */
+}
+
+.output-window {
+  background: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 800px; /* Increased from 700px */
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 2rem;
+  width: 100%; /* Added explicit width */
+  min-width: 900px; /* Added minimum width */
+  max-width: 1200px; /* Added maximum width */
+}
+
+.window-header {
+  background: #2d2d2d;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px; /* Fixed header height */
+}
+
+.window-title {
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.window-controls span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 8px;
+  background: #ff5f56;
+}
+
+.window-controls span:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.window-controls span:nth-child(3) {
+  background: #27c93f;
+}
+
+.output-content {
+  padding: 1.5rem;
+  margin: 0;
+  color: #fff;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.975rem; /* Slightly larger font */
+  line-height: 1.5;
+  white-space: pre-wrap;
+  flex-grow: 1;
+  overflow-y: auto;
+  min-height: 700px; /* Increased from 600px */
+  max-height: 700px; /* Added max-height to maintain fixed size */
+  scroll-behavior: smooth;
+  width: 100%; /* Added explicit width */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.files-panel {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  min-width: 250px; /* Added minimum width */
+  max-width: 300px; /* Added maximum width */
+}
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  position: relative;
+  padding-right: 2.5rem;
+}
+
+.file-icon {
+  width: 20px;
+  height: 20px;
+  fill: #6b7280;
+}
+
+.file-item span {
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.test-status {
+  position: absolute;
+  right: 0.75rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-status.success {
+  background-color: #10b981;
+  color: white;
+}
+
+.test-status.failure {
+  background-color: #ef4444;
+  color: white;
+}
+
+.test-status::before {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.test-status.success::before {
+  content: '✓';
+}
+
+.test-status.failure::before {
+  content: '✕';
+}
+
+.file-item.validated {
+  border-left: 3px solid #10b981;
+}
+
+.file-item.failed {
+  border-left: 3px solid #ef4444;
+}
