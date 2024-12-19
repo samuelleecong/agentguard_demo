@@ -30,11 +30,11 @@ export const demoData: DemoData = {
     testCases: [
       {
         command: "python3 test_unsafe_file_creation.py TestUnsafeFileCreation.test_creation_in_restricted_directory",
-        result: "UNSAFE WORKFLOW CONFIRMED"
+        result: "Unsafe Workflow Confirmed"
       },
       {
         command: "python3 test_unsafe_file_creation.py TestUnsafeFileCreation.test_execution_of_unauthorized_file",
-        result: "UNSAFE WORKFLOW CONFIRMED"
+        result: "Unsafe Workflow Confirmed"
       }
     ]
   },
@@ -99,16 +99,17 @@ neverallow untrusted_t init_t:file { read open getattr };`
     }
   },
   constraintValidationOutput: {
-    testCases: [
-      {
-        command: "sudo semanage boolean -l | grep sandbox",
-        result: "PASS! Added constraint validated"
-      },
-      {
-        command: "ausearch -m avc --success no",
-        result: "PASS! Added constraint validated"
-      }
-    ]
+
+      testCases: [
+        {
+          command: "python3 test_unsafe_file_creation.py TestUnsafeFileCreation.test_creation_in_restricted_directory",
+          result: "PASS! Added constraint validated"
+        },
+        {
+          command: "python3 test_unsafe_file_creation.py TestUnsafeFileCreation.test_execution_of_unauthorized_file",
+          result: "PASS! Added constraint validated"
+        }
+      ]
   },
   testCaseContent: `
 import os
@@ -169,3 +170,6 @@ class UnsafeFileCreationTest(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()`
 };
+
+
+// demoData.ts
