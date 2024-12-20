@@ -1,18 +1,45 @@
-# React + TypeScript + Vite
+# AgentGuard Demo
 
-To use: 
-```
+A demonstration of AgentGuard's capability to detect and prevent unsafe AI agent workflows through security constraint validation.
+
+## Demo Video
+
+https://github.com/samuelleecong/agentguard_demo/assets/videos/agentguard_demo_final.mov
+
+[Watch the full demo video](https://github.com/samuelleecong/agentguard_demo/assets/videos/agentguard_demo_final.mov)
+
+## Features
+
+- Detection of unsafe workflow patterns in AI agent operations
+- Security constraint validation and enforcement
+- Real-time workflow analysis
+- SELinux-based security policy implementation
+
+## Getting Started
+
+```bash
 npm install
 npm run dev
 ```
 
+## Security Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The demo showcases:
+- Workflow validation for potential security risks
+- Detection of unauthorized file operations
+- Security constraint enforcement
+- Test case validation for security measures
 
-Currently, two official plugins are available:
+## Technical Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React + TypeScript + Vite
+- SELinux security policies
+- Custom security constraint validation
+- Automated test suites for security verification
+
+## Development
+
+For local development, the project uses Vite with React. The security constraints are implemented through SELinux policies and custom validation logic.
 
 ## Expanding the ESLint configuration
 
