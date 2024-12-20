@@ -2,12 +2,6 @@
 
 A demonstration of AgentGuard's capability to detect and prevent unsafe AI agent workflows through security constraint validation.
 
-## Demo Video
-
-https://github.com/samuelleecong/agentguard_demo/assets/videos/agentguard_demo_final.mov
-
-[Watch the full demo video](https://github.com/samuelleecong/agentguard_demo/assets/videos/agentguard_demo_final.mov)
-
 ## Features
 
 - Detection of unsafe workflow patterns in AI agent operations
